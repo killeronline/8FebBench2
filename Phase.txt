@@ -1,0 +1,30 @@
+web.php?r=uj9th45Ye5FghYj6uJkLoerHyuS67Tjd
+------------------------------------------
+phase 1 ( game to server )
+-------
+t	:2345565789
+v	:3
+sp 	:Violet
+p1	:23
+p2	:34567
+p3	:stuff
+
+r = uj9th45Ye5FghYj6uJkLoerHyuS67Tjd
+
+phase 2 ( server decrypts the request and executes the stored procedure )
+-------
+out1	:34
+out2	:SUCCESS
+
+phase 3 ( encrypt the output of stored procedure into response header )
+-------
+sr3hy67cfGetNu7mk2
+
+phase 4 ( decrypt this output inside game into the output variables )
+-------
+use the decrypted output variables
+
+
+
+
+

@@ -1,0 +1,69 @@
+the packet : int , char (int) , varchar
+
+Record : int, varchar , text (input) , tinyint (input)
+
+Create : int, bigint (input) , varchar
+
+
+creating T with  (  QuickPlayers , 18 , 1490 )
+
+
+
+SET @p0 =  'QuickP';
+
+SET @p1 =  '18';
+
+SET @p2 =  '1490';
+
+CALL `CreateTournament` (
+@p0 , @p1 , @p2 , @p3 , @p4 , @p5
+);
+
+SELECT @p3 AS  `_buffer` , @p4 AS  `_buffer2` , @p5 AS  `_output` ;
+
+
+
+
+output is 
+_buffer  = 0
+_buffer2 = 25
+_output  = SUCCESS
+
+
+going with ishia30 create T : ( 'BulletP' , '30' , '1480' )
+
+---------
+
+packet 4 , 'F'
+
+SET @p0 =  '4';
+
+SET @p1 =  'F';
+
+CALL `ThePacket` (
+@p0 , @p1 , @p2
+);
+
+SELECT @p2 AS  `_output` ;
+
+----------
+
+SET @p0 =  '24';
+
+SET @p1 =  '7';
+
+SET @p2 =  '8';
+
+SET @p7 =  'yes';
+
+SET @p8 =  '88';
+
+SET @p9 =  '66';
+
+CALL `Record` (
+@p0 , @p1 , @p2 , @p3 , @p4 , @p5 , @p6 , @p7 , @p8 , @p9 , @p10
+);
+
+SELECT @p3 AS  `_first_id` , @p4 AS  `_second_id` , @p5 AS  `_buffer` , @p6 AS  `_output` , @p10 AS  `_buffer2` ;
+
+

@@ -1,0 +1,65 @@
+We need to get a timestamp from server on home screen
+$t=time(); assume this is var t1 = 34553130
+now we map this t1 to a datetime on client c1 = 08022016122133 (or client epoch)
+when timerequest is sent
+in future we will have a datetime on client c2 = 08022016122550
+game start at 21 : 33 , some web request sent at 25 : 50 
+so time diff is 4 mins and 17 seconds
+t1 - c1 = constant = t2 - c2
+t1 - c1 = t2 - c2
+Find t2 ?
+t2 = t1 - c1 + c2
+t2 = t1 + ( c2 - c1 )
+which here would be t2 = 34553130 + ( offset = commonsence of time diff ) 
+t2 = 34553130 + ( 4mins 17 seconds ) = 34553130 + 257seconds = 34553387
+t2 is sent to server along with the Encrypted Get Request
+....
+
+Why ?
+
+assume hacker uses fiddler/wireshark to see http requests
+he can see a request of adding 100 Gems as rewards like 
+
+mrwdata.website / gems.php ? request = t7yUh635Jikjuf31hjuPoLvbEwMj
+
+[Hack] : now he may note it down and hit it when ever he needs to get 100 Gems
+
+the request can be like coin increment or unit upgrade...
+
+sometimes his direct calling of our webrequest may create bad data in our database
+
+.........
+
+How we avoid this ?
+
+We make use of t2 and see that if the request is sent from game or any other
+
+because only our game has the ability to send the perfect offset as it gets the t1 from server and calculates t2
+
+so if hacker should note the request and hit it again, Encryption fails as it is time bound to server and client
+
+.........
+
+challenges ?
+
+due to network latency we cannot deliver a request in the next second to server
+it may take upto 30seconds to 1minute or 2minutes.
+so by analytics and testing we will find a comfortable window like 2 minutes
+
+so even if hacker can hack the request but cannot use it for other players as it is encrypted
+
+also he may use a gem increment but then he may use it for only 2 minutes
+.........
+
+hard part ?
+
+encrypting all the request into single unified encrypted request
+also we need to decrypt the request at the server in php code
+finally we need to encrypt the output in php code
+and also decrypt the output in our game
+..........
+
+
+
+
+
